@@ -1,0 +1,239 @@
+﻿<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ăn Vặt Mọi Lúc, Giao Hàng Mọi Nơi</title>
+    <link href="~/Content/ProductLayout/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/Content/ProductLayout/js/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="~/Content/ProductLayout/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="New Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'><!--//fonts-->
+    <!-- start menu -->
+    <link href="~/Content/ProductLayout/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Content/ProductLayout/js/memenu.js"></script>
+    <script>$(document).ready(function () { $(".memenu").memenu(); });</script>
+
+
+    <script src="~/Content/ProductLayout/js/main.js"></script>
+    <script src="~/Content/ProductLayout/js/simpleCart.min.js"> </script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+</head>
+<body>
+    <!--header-->
+    <div class="header">
+        @Html.Partial("~/Views/Layout/HeaderTopPartital.cshtml")
+        
+        <div class="container">
+            <div class="head-top">
+                <div class="logo">
+                    <a href="@Url.Action("Index","Home")"><img src="~/Content/ProductLayout/images/logo.png" alt=""></a>
+                </div>
+                @Html.Action("MenuPartial", "Home")
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="product">
+        <div class="container">
+            <div class="col-md-3 product-price">
+
+                <div class=" rsidebar span_1_of_left">
+                    <div class="of-left">
+                        <h4 class="cate">Danh mục sản phẩm </h4>
+                    </div>
+                    <ul class="menu">
+                        <li class="item1">
+                            <a href="#">Đồ ăn </a>
+                            <ul class="cute">
+                                <li class="subitem1"><a href="#">Thịt trâu gác bếp </a></li>
+                                <li class="subitem2"><a href="#">Khô bò </a></li>
+                                <li class="subitem3"><a href="#">Nem cuốn</a></li>
+                            </ul>
+                        </li>
+                        <li class="item2">
+                            <a href="#">Đồ Uống </a>
+                            <ul class="cute">
+                                <li class="subitem1"><a href="#">Trà Sữa</a></li>
+                                <li class="subitem2"><a href="#">Cafe </a></li>
+                                <li class="subitem3"><a href="#">Nước Hoa Quản </a></li>
+                            </ul>
+                        </li>
+                        
+
+                    </ul>
+                </div>
+                <!--initiate accordion-->
+                <script type="text/javascript">
+                    $(function () {
+                        var menu_ul = $('.menu > li > ul'),
+                               menu_a = $('.menu > li > a');
+                        menu_ul.hide();
+                        menu_a.click(function (e) {
+                            e.preventDefault();
+                            if (!$(this).hasClass('active')) {
+                                menu_a.removeClass('active');
+                                menu_ul.filter(':visible').slideUp('normal');
+                                $(this).addClass('active').next().stop(true, true).slideDown('normal');
+                            } else {
+                                $(this).removeClass('active');
+                                $(this).next().stop(true, true).slideUp('normal');
+                            }
+                        });
+
+                    });
+                </script>
+                <!---->
+                <div class="product-middle">
+
+                    <div class="fit-top">
+                        <h6 class="shop-top">Đồ ăn vặt</h6>
+                        <a href="#" class="shop-now">Mua ngay</a>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <div class="sellers">
+                    <div class="of-left-in">
+                        <h3 class="tag">Tags</h3>
+                    </div>
+                    <div class="tags">
+                        <ul>
+                            <li><a href="#">Trâu</a></li>
+                            <li><a href="#">Tráng</a></li>
+                            <li><a href="#">Gà</a></li>
+                            <li><a href="#">Thịt</a></li>
+                            <li><a href="#">Ăn</a></li>
+                            <li><a href="#">shusi</a></li>
+                            <li><a href="#">cafe</a></li>
+                            <li><a href="#">sữa</a></li>
+                            <li><a href="#">Trà</a></li>
+                            <li><a href="#">Đào</a></li>
+                            <li><a href="#">Bánh</a></li>
+                            <li><a href="#">Uống</a></li>
+
+                            <div class="clearfix"> </div>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <!---->
+                <div class="product-bottom">
+                    <div class="of-left-in">
+                        <h3 class="best">Mua nhiều</h3>
+                    </div>
+                    <div class="product-go">
+                        <div class=" fashion-grid">
+                            <a href="#"><img class="img-responsive " src="~/Content/HinhAnhSP/cooky-recipe-636595280570239215.jpg" alt=""></a>
+
+                        </div>
+                        <div class=" fashion-grid1">
+                            <h6 class="best2">
+                                <a href="#">
+                                    Sản phẩm được ưa chuộng
+                                </a>
+                            </h6>
+
+                            <span class=" price-in1"> 850.000 VNĐ</span>
+                        </div>
+
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="product-go">
+                        <div class=" fashion-grid">
+                            <a href="#"><img class="img-responsive " src="~/Content/HinhAnhSP/Ca-Chep-Gac-Bep-17.jpg" alt=""></a>
+                        </div>
+                        <div class="fashion-grid1">
+                            <h6 class="best2">
+                                <a href="#">
+                                    Sản phẩm được ưa chuộng
+                                </a>
+                            </h6>
+
+                            <span class=" price-in1"> 330.000 VNĐ</span>
+                        </div>
+
+                        <div class="clearfix"> </div>
+                    </div>
+
+                </div>
+                <div class=" per1">
+                    <a href="#">
+                        <img class="img-responsive" src="~/Content/HinhAnhSP/cooky-recipe-636595280570239215.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-9 product-price1">
+                @RenderBody()
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!--//content-->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-top-at">
+
+                <div class="col-md-4 amet-sed">
+                    <h4>Thêm Thông Tin</h4>
+                    <ul class="nav-bottom">
+                        <li><a href="#">Đặt Hàng Như Thế Nào</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="contact.html">Vị Trí</a></li>
+                        <li><a href="#">Đang Chuyển Hàng</a></li>
+                        <li><a href="#">Thành Viên</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 amet-sed ">
+                    <h4>Liên Hệ Với Chúng Tôi</h4>
+
+                    <p>
+                        Tổ 3. Khu phố 2, TânĐịnh, Bến Cát, Bình Dương
+                    </p>
+                    <p>office: 0975824272</p>
+                    <ul class="social">
+                        <li><a href="https://www.facebook.com/johnytuananh" target="_blank"><i> </i></a></li>
+                        <li><a href="https://twitter.com/johnytuananh" target="_blank"><i class="twitter"> </i></a></li>
+                        <li><a href="#"><i class="rss"> </i></a></li>
+                        <li><a href="https://plus.google.com/johnytuananh" target="_blank"><i class="gmail"> </i></a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4 amet-sed">
+                    <h4>Nhận Tin Mới Nhất</h4>
+                    <p>
+                        Đăng ký để có được tất cả các bản cập nhật tin tức và khuyến mãi
+                    </p>
+                    <form>
+                        <input type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+                        <input type="submit" value="Đăng Ký">
+                    </form>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="footer-class">
+            <p>© 2022 Ăn Vặt Online| Design by  <a href="https://www.facebook.com/tuananh.nguyentrong.777/about" target="_blank">Tuấn Anh</a> </p>
+        </div>
+    </div>
+
+
+</body>
+</html>

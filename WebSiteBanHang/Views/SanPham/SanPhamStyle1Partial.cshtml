@@ -1,0 +1,91 @@
+﻿@using WebSiteBanHang.Models
+@model IEnumerable<SanPham>
+
+<style>
+    .cell {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 20%;
+    height: 315px;
+    border: 1px solid #ececec;
+    margin: -1px -3px 0 0;
+    float: left;
+}
+    .igure {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 40px;
+    -webkit-margin-end: 40px;
+}
+    .buy {
+    font-size: 14px;
+    color: #fff;
+    padding: 5px 14px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    height: auto;
+    border: 1px solid #d97f00;
+    border-radius: 3px;
+    background: #f89406;
+    background: -webkit-gradient(linear,0% 0%,0% 100%,from(#f76b1c),to(#f89406));
+    background: -webkit-linear-gradient(top,#f89406,#f76b1c);
+    background: -moz-linear-gradient(top,#f89406,#f76b1c);
+    background: -ms-linear-gradient(top,#f89406,#f76b1c);
+    background: -o-linear-gradient(top,#f89406,#f76b1c);
+}
+    .buy:hover{
+        text-decoration:none;
+    }
+
+    .km {
+    display: block;
+    font-size: 12px;
+    color: #797979;
+    margin: 0 9px;
+    clear: both;
+    float: none;
+    width: 64%;
+    height: auto;
+    border: 0;
+}
+     .strong {
+    float: left;
+    font-size: 14px;
+    color: #ff0000;
+    margin: 0 9px 5px;
+}
+ </style>
+        @foreach (var item in Model.Take(15))
+        {
+            
+            <div class="col-md-4 grid-top" style="width:20%;height:320px;display: inline-block;vertical-align: top;
+    position: relative ;border: 1px solid #ececec;
+    margin: -1px -3px 0 0;
+    float: left; ">
+                <a href="@Url.RouteUrl("XemChiTiet", new { @id = item.MaSP, @tensp=item.TenSP})" class="b-link-stripe b-animate-go  thickbox">
+                    <img class="img-responsive" src="@Url.Content("~/Content/HinhAnhSP/"+item.HinhAnh)  " alt="" style="height: 150px; width:150px; margin-top:20px;">      
+                    <div class="b-wrapper">
+                        <h3 class="b-animate b-from-left    b-delay03 " style="text-align:left;font-size:10pt;">
+                            @Html.Raw(item.ChiTiet)
+                        </h3>
+                    </div>
+
+                    <p><a href="@Url.RouteUrl("XemChiTiet", new {@id = item.MaSP,@tensp = item.TenSP })" style="margin-bottom:auto;">@item.TenSP</a></p>
+                    <strong style="float: left;font-size: 20px;color:#ff0000;margin: 0 9px 5px;">@item.DonGia.Value.ToString("#,##") VNĐ</strong>
+                    <div class="km" style="display: block; font-size: 12px; color: #797979; margin: 0 9px; clear: both; float: none; width: 64%; height: auto; border: 0;">
+                        <span margin-left="5px">
+                            -Giảm ngay 5% khi mua
+                        </span>
+                    </div>
+                    </a>
+                    <a href="@Url.Action("ThemGioHang", "GioHang", new {@MaSP = item.MaSP,@strURL = Request.Url.ToString() })" class="buy">Mua</a> 
+                    @Ajax.ActionLink("Mua Sản Phẩm", "ThemGioHangAjax", "GioHang", new { @MaSP = item.MaSP, @strURL = Request.Url.ToString() }, new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "divGioHang", InsertionMode = InsertionMode.Replace }, null)
+            </div>
+               
+        }
+        <div class="clearfix"> </div>
+    
